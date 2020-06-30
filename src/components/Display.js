@@ -1,6 +1,8 @@
+// imports
 import React from 'react'
 import { Text, View, StyleSheet } from 'react-native'
 
+// style sheet
 const styles = StyleSheet.create({
     display: {
         flex: 1,
@@ -15,6 +17,7 @@ const styles = StyleSheet.create({
     }
 })
 
+// display creation
 export default props =>
     <View style={styles.display}>
         <Text style={styles.displayValue}

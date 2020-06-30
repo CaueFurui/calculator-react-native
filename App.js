@@ -1,9 +1,11 @@
+//imports
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-
 import Button from './src/components/Button'
 import Display from './src/components/Display'
 
+
+// declaration of the initial state
 const initialState = {
   displayValue: '0',
   clearDisplay: false,
@@ -12,13 +14,14 @@ const initialState = {
   current: 0
 }
 
+// export for the default class
 export default class App extends Component {
 
+  // variable of spreading of the initial state
   state = { ...initialState }
 
+  //function that adds digit and concatenate the digits
   addDigit = n => {
-    
-
     const clearDisplay = this.state.displayValue === '0' || this.state.clearDisplay
 
     if (n == '.' && !clearDisplay && this.state.displayValue.includes('.')) {
@@ -36,10 +39,12 @@ export default class App extends Component {
     }
   }
 
+  // function of the button AC
   clearMemory = n => {
     this.setState({ ...initialState })
   }
 
+  // function that make the operation
   setOperation = operation => {
     if (this.state.current === 0) {
       this.setState({ operation, current: 1, clearDisplay: true})
@@ -63,6 +68,7 @@ export default class App extends Component {
     }
   }
 
+  // function which render the calculator
   render() {
     return (
       <View style={styles.container}>
@@ -91,6 +97,7 @@ export default class App extends Component {
   }
 }
 
+// style sheet
 const styles = StyleSheet.create({
   container: {
     flex: 1

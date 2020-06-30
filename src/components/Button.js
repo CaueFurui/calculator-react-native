@@ -1,6 +1,9 @@
+// imports 
 import React from 'react'
 import { Text, StyleSheet, Dimensions, TouchableHighlight } from 'react-native'
 
+
+//style sheet
 const styles = StyleSheet.create({
     button: {
         fontSize: 40,
@@ -24,6 +27,7 @@ const styles = StyleSheet.create({
     }
 })
 
+// creation of the buttons
 export default props => {
     const stylesButton = [styles.button]
     if (props.double) stylesButton.push(styles.buttonDouble)
